@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze and Character Viewer with Minimap</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #333; /* 背景を少し暗めに */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 見やすいフォントを指定 */
+        }
+        canvas {
+            display: block;
+        }
+        /* 操作方法表示用のスタイルを追加 */
+        #controls-info {
+            position: absolute;
+            top: 20px; /* 下からの位置 */
+            left: 20px;   /* 左からの位置 */
+            padding: 12px 18px;
+            background-color: rgba(0, 0, 0, 0.65); /* 半透明の黒背景 */
+            color: #f0f0f0; /* 明るめの文字色 */
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.7; /* 行間を少し広げる */
+            z-index: 100; /* Canvasより手前に表示 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* 少し影をつける */
+        }
+        #controls-info p {
+            margin: 5px 0; /* 段落間のマージン */
+        }
+        #controls-info strong {
+            color: #ffffff; /* タイトル文字を白く */
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px; /* タイトルの下のマージン */
+        }
+    </style>
+</head>
+<body>
+    <div id="controls-info">
+        <p><strong>操作方法</strong></p>
+        <p>W/A/S/D または ↑/←/↓/→ : 移動</p>
+        <p>スペースキー : キック</p>
+    </div>
 
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
