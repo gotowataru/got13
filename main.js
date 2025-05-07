@@ -283,7 +283,7 @@ async function loadAssetsAndSetup() { // (ミニマップカメラ設定を追�
             console.log("ミニマップカメラ設定完了。");
         }
 
-        animate(); // アニメーションループ開始
+　　　animate(); // アニメーションループ開始
     } catch (error) { // (ユーザー提供版のエラー表示を維持)
         console.error("アセット読み込みまたはセットアップ中に致命的なエラーが発生:", error);
         const errorDiv = document.createElement('div');
@@ -402,8 +402,7 @@ function animate() {
         console.log("Canvas実効サイズ: 幅=" + renderer.domElement.width + "px, 高さ=" + renderer.domElement.height + "px");
     }
     // --- ▲▲▲ Canvasサイズ確認のためのログを追加 ▲▲▲ ---
-    
-    
+
     requestAnimationFrame(animate);
     const delta = clock.getDelta();
 
@@ -486,8 +485,8 @@ function animate() {
 
         const viewportWidth = renderer.domElement.width;
         const viewportHeight = renderer.domElement.height;
-        const mapScreenX = viewportWidth - MINIMAP_SIZE_PX - MINIMAP_MARGIN_PX;
-        const mapScreenY = viewportHeight - MINIMAP_SIZE_PX - MINIMAP_MARGIN_PX;
+        const mapScreenX = MINIMAP_MARGIN_PX;
+        const mapScreenY = MINIMAP_MARGIN_PX;
 
         // 現在の Scissor/Viewport 設定を保存
         const currentScissorTest = renderer.getScissorTest();
