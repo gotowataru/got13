@@ -396,6 +396,14 @@ function onWindowResize() { // (ユーザー提供版と同じ)
 
 // --- アニメーションループ (カメラ処理とミニマップ描画を追加・修正) ---
 function animate() {
+
+    // --- ▼▼▼ Canvasサイズ確認のためのログを追加 ▼▼▼ ---
+    if (renderer) { // rendererが初期化されていることを確認
+        console.log("Canvas実効サイズ: 幅=" + renderer.domElement.width + "px, 高さ=" + renderer.domElement.height + "px");
+    }
+    // --- ▲▲▲ Canvasサイズ確認のためのログを追加 ▲▲▲ ---
+    
+    
     requestAnimationFrame(animate);
     const delta = clock.getDelta();
 
